@@ -1,0 +1,527 @@
+
+
+body {
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Header genel stil */
+.header {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.header img {
+  width: 150px;
+  height: 150px;
+}
+
+/* Menü ikonu */
+.menu-icon {
+  display: none; /* Bilgisayarda gizli */
+  color: black;
+  font-size: 40px; /* Iconun büyüklüğünü 40px olarak ayarlıyoruz */
+  cursor: pointer;
+  position: absolute;
+  right: 20px; /* Sağ tarafta biraz daha sola alıyoruz */
+}
+
+/* Sidebar (Telefonlar için) */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  color: black;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 1000;
+  box-shadow: -2px 0px 5px rgba(0,0,0,0.5); /* Sidebar kenarına gölge ekleniyor */
+}
+
+.sidebar a {
+  padding: 12px;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 36px;
+  color: black;
+  cursor: pointer;
+}
+
+/* Menü Linkleri (Bilgisayar için) */
+.header-right {
+  display: flex;
+  gap: 15px;
+  margin-top: 3em;
+}
+
+.header-right a {
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header-right a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.background-image {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.slide-content {
+  color: white;
+  text-align: center;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.slide-content h1 {
+  font-size: 80px;
+  color: #282828;
+}
+
+#banner-button {
+  margin-top: 1em;
+  padding: 15px 50px 15px 50px;
+  background-color: #282828;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+
+#banner-button:hover {
+  background-color: #ddd;
+  color: black;
+  cursor: pointer;
+
+}
+
+main {
+  margin-top: 5em;
+  max-width: 100%;
+  height: 80vh;
+  flex: 1;
+}
+
+.main-boxes {
+  width: 80%;
+  height: auto;
+  margin: 10%;
+  display: flex;
+  justify-content: space-between; /* Kutuların yan yana olmasını sağla */
+  flex-wrap: wrap; /* Ekran küçüldüğünde kutuların alt alta geçmesini sağlar */
+}
+
+.main-box1,
+.main-box2,
+.main-box3 {
+  border-radius: 30px;
+  background-color: #ddd;
+  width: 30%; /* Desktop için kutuların genişliği %30 */
+  height: auto; /* Yükseklik otomatik olacak */
+  margin-top: 2em; /* Kutular arasında boşluk */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 1em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease, transform 3s ease;
+}
+
+.main-box1.visible,
+.main-box2.visible,
+.main-box3.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main-box1 h2,
+.main-box2 h2,
+.main-box3 h2 {
+  text-align: center;
+  color: #282828;
+  width: 70%;
+  margin-top: 1em;
+}
+
+.main-box1 p,
+.main-box2 p,
+.main-box3 p {
+  color: #282828;
+  text-align: center;
+  width: 70%;
+  word-wrap: break-word;
+}
+
+.main-box1 p {
+  margin-top: 1em;
+}
+
+.main-box2 p {
+  margin-top: 1em;
+}
+
+.main-box3 p {
+  margin-top: 4.8em;
+}
+
+#yazilma-formu,
+#genclik-button,
+#hakkinda-button {
+  padding: 10px 20px 10px 20px;
+  background-color: #282828;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  margin-top: 2em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#yazilma-formu:hover,
+#genclik-button:hover,
+#hakkinda-button:hover {
+  border: 1px solid #282828;
+  background-color: #ddd;
+  color: black;
+  cursor: pointer;
+}
+
+/* Responsive tasarım: ekran genişliği 800px ve daha küçük olduğunda */
+@media screen and (max-width: 800px) {
+  .main-boxes {
+    flex-direction: column; /* Kutuları dikey sıralar */
+    align-items: center;
+  }
+
+  .main-box1, .main-box2, .main-box3 {
+    width: 90%; /* Her kutu %90 genişlikte olacak */
+    margin-top: 2em; /* Üst boşluk daha küçük olacak */
+  }
+
+  #yazilma-formu,
+  #genclik-button,
+  #hakkinda-button {
+    width: 100%; /* Butonlar %100 genişlikte olacak */
+    margin-top: 1em; /* Butonlar arasına daha küçük boşluk ekle */
+  }
+}
+.camii-hakkinda {
+  max-width: 100%;
+  height: 80vh;
+  opacity: 1;
+  transform: translateY(-20px);
+  transition: opacity 2s ease, transform 3s ease;
+
+}
+
+.camii-hakkinda.visible,
+.hakkinda-content.main-box1.visible,
+.hakkinda-part1.visible,
+.hakkinda-part2.visible{
+  opacity: 0;
+  transform: translateY(20);
+}
+
+.hakkinda-content {
+  margin-top: 8em;
+  max-width: 100%;
+  height: 60vh;
+}
+
+.camii-hakkinda {
+  padding: 20px;
+}
+
+.hakkinda-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hakkinda-part1 {
+  flex: 1;
+  max-width: 30%;
+  margin-right: 20px;
+  background-image: url('/images/hakkindaimage.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.hakkinda-part2 {
+  flex: 2;
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hakkinda-part2 h2 {
+  font-size: 40px;
+}
+
+.hakkinda-part2 p {
+  word-wrap: break-word;
+  width: 60%;
+}
+
+.camii-map {
+  margin-top: 20em;
+  margin-bottom: 10em;
+  display: flex;
+  max-width: 100%;
+  height: 60vh;
+  opacity: 1;
+  transform: translateY(-20px);
+  transition: opacity 2s ease, transform 3s ease;
+
+}
+
+.camii-map.visible{
+  opacity: 0;
+  transform: translateY(20);
+}
+
+.camii-map1,
+.camii-map2 {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.camii-map1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 200px;
+}
+
+.camii-map2 {
+  flex: 2;
+}
+
+.camii-map2 iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 20px;
+}
+
+.camii-map1 h2 {
+  font-size: 40px;
+}
+
+#map-button {
+  padding: 10px 20px 10px 20px;
+  background-color: #282828;
+  color: white;
+  font-size: 14px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 3em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#map-button:hover {
+  border: 1px solid #282828;
+  background-color: #ddd;
+  color: black;
+  cursor: pointer;
+}
+
+.camii-map1 h2,
+.camii-map1 p,
+.camii-map1 a {
+  margin: 10px 0;
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  background-color: #ddd;
+  margin: 20px auto;
+  width: 50%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.footer-social i {
+  font-size: 24px;
+  margin: 0 10px;
+}
+
+.footer-social i.fa-instagram {
+  background: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+.footer-social i.fa-facebook {
+  color: #3b5998;
+  cursor: pointer;
+}
+
+.footer-social i.fa-whatsapp {
+  color: #25D366;
+  cursor: pointer;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 200px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+#diyanet-logo {
+  width: 200px;
+  height: 60px;
+  margin-top: 0px;
+}
+
+.footer-help {
+  text-align: right;
+}
+
+.footer-help a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer-help a:hover {
+  text-decoration: underline;
+}
+
+/* Medya sorguları (Telefonlar için) */
+@media screen and (max-width: 768px) {
+  /* Menü ikonu mobilde sağda görünür */
+  .menu-icon {
+    display: block;
+    font-size: 40px;
+    position: absolute;
+    right: 20px; /* Sağ tarafta hizalama */
+  }
+
+  /* Menü öğeleri mobilde gizli */
+  .header-right {
+    display: none;
+  }
+
+  /* Sidebar açıldığında ekranı kaplasın (telefonlarda tam ekran) */
+  .sidebar {
+    width: 100%; /* Sidebar'ın genişliği tam ekran */
+    height: 100%; /* Tam yükseklik */
+    overflow-x: hidden; /* Yatay kaydırma engelleniyor */
+    overflow-y: auto; /* Dikey kaydırma sadece içeriği sığdırmak için */
+  }
+
+  /* Sidebar içindeki menü öğeleri */
+  .sidebar a {
+    padding: 16px;
+    font-size: 18px; /* Daha büyük font boyutu */
+  }
+
+  /* Sidebar içerisindeki kapama butonu */
+  .sidebar .closebtn {
+    font-size: 36px;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+  }
+}
+
+/* Tabletler ve Desktop için stil (değişiklik yok) */
+@media screen and (min-width: 769px) {
+  .menu-icon {
+    display: none; /* Menü ikonu masaüstü ve tabletlerde gizlenir */
+  }
+
+  .sidebar {
+    width: 0; /* Sidebar başlangıçta gizli */
+  }
+
+  .sidebar a {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .header-right {
+    display: flex;
+    gap: 15px;
+  }
+}
+

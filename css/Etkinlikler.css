@@ -1,0 +1,217 @@
+* {
+    max-width: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+
+nav {
+    flex: 0.1;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 1em;
+    padding: 1em;
+    width: 100%;
+    white-space: nowrap;
+}
+
+nav ul li a {
+    text-decoration: none;
+    position: relative;
+    color: black;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    margin: 5px auto 0;
+    /* Üstte 5px boşluk bırak */
+    width: 100%;
+    /* Alt çizginin genişliği */
+    height: 1px;
+    /* Alt çizginin kalınlığı */
+    background: black;
+    /* Alt çizginin rengi */
+    transition: width .3s;
+    /* Geçiş animasyonu */
+}
+
+
+
+nav ul li a:hover::after {
+    width: 0;
+    /* Hover durumunda alt çizgiyi gizle */
+}
+
+.logo {
+    margin: 0em;
+}
+
+.logo img {
+    width: 150px;
+    height: 150px;
+}
+
+/*DIVIDER*/
+#divider1 {
+    width: 40%;
+    margin: 20px auto;
+    border-bottom: 1px solid #ccc;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+#divider2 {
+    width: 40%;
+    margin: 20px auto;
+    border-bottom: 1px solid #ccc;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+/*FOOTER*/
+/*FOOTER*/
+footer {
+    margin-top: 5em;
+    background-color: #ffffff;
+    padding: 20px 0;
+  }
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    flex: 1;
+}
+
+.social-icon {
+    font-size: 25px;
+    color: transparent;
+    text-decoration: none;
+    transition: color 0.3s, background 0.3s;
+}
+
+.social-icon:hover {
+    color: transparent;
+}
+
+.social-icon .fa-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.social-icon .fa-whatsapp {
+    background: linear-gradient(45deg, #25D366, #128C7E);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.social-icon .fa-facebook {
+    color: #3b5998;
+}
+
+.camii-name {
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.camii-address {
+    text-align: right;
+    flex: 1;
+}
+
+.camii-address a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.camii-address a:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown button */
+.dropdown-btn {
+    background-color: #ccc; /* Gri renk */
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  /* Dropdown content hidden by default */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 200px; /* Dropdown box genişliği */
+  }
+  
+  /* Links in dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Add icons to links */
+  .dropdown-content img {
+    width: 20px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  /* Button'da aktif değilken gri ton */
+  .dropdown-btn:focus, .dropdown-btn:hover {
+    background-color: #bbb;
+  }
+  
+  /* Açıkken dropdown içeriği göster */
+  .show {
+    display: block;
+  }

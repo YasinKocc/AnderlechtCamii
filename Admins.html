@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönetim Kurulu | Anderlecht Merkez Camii</title>
+    <!--Css-->
+    <link rel="stylesheet" href="css/Admins.css">
+    <link rel="icon" type="x-icon" href="images/logo.png">
+
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/9b93d29e26.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <a href="index2.html">
+            <img src="images/logo.png" alt="logo">
+        </a>
+        <div class="header-right">
+            <a href="index2.html">Ana sayfa</a>
+            <a href="Admins.html">Yönetim Kurulu</a>
+            <a href="AGK.html">A.G.K.</a>
+            <a href="contact.html">Iletisim</a>
+            <a href="Membership.html">Üye ol</a>
+        </div>
+    </div>
+    <main>
+        <div class="admin-container">
+            <h1>Yönetim Kurulu</h1>
+            <div class="row">
+                <div class="person"
+                    onclick="openModal('Isim 1', 'Meslek: Meslek 1', 'Bu kişi hakkında daha fazla bilgi.', 'images/user.png')">
+                    <img src="images/user.png" alt="Persoon 1" class="profile-pic">
+                    <h3>Isim 1</h3>
+                    <p>Meslek: Meslek 1</p>
+                </div>
+                <div class="person"
+                    onclick="openModal('Isim 2', 'Meslek: Meslek 2', 'Bu kişi hakkında daha fazla bilgi.', 'images/user.png')">
+                    <img src="images/user.png" alt="Persoon 2" class="profile-pic">
+                    <h3>Isim 2</h3>
+                    <p>Meslek: Meslek 2</p>
+                </div>
+                <div class="person"
+                    onclick="openModal('Isim 3', 'Meslek: Meslek 3', 'Bu kişi hakkında daha fazla bilgi.', 'images/user.png')">
+                    <img src="images/user.png" alt="Persoon 3" class="profile-pic">
+                    <h3>Isim 3</h3>
+                    <p>Meslek: Meslek 3</p>
+                </div>
+                <div class="person"
+                    onclick="openModal('Isim 4', 'Meslek: Meslek 4', 'Bu kişi hakkında daha fazla bilgi.', 'images/user.png')">
+                    <img src="images/user.png" alt="Persoon 4" class="profile-pic">
+                    <h3>Isim 4</h3>
+                    <p>Meslek: Meslek 4</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="person"
+                    onclick="openModal('Isim 5', 'Meslek: Meslek 5', 'Bu kişi hakkında daha fazla bilgi.', 'images/user.png')">
+                    <img src="images/user.png" alt="Persoon 5" class="profile-pic">
+                    <h3>Isim 5</h3>
+                    <p>Meslek: Meslek 5</p>
+                </div>
+                <div class="person"
+                    onclick="openModal('Isim 6', 'Meslek: Meslek 6', 'Bu kişi hakkında daha fazla bilgi.', 'images/user.png')">
+                    <img src="images/user.png" alt="Persoon 6" class="profile-pic">
+                    <h3>Isim 6</h3>
+                    <p>Meslek: Meslek 6</p>
+                </div>
+                <div class="person"
+                    onclick="openModal('Isim 7', 'Meslek: Meslek 7', 'Bu kişi hakkında daha fazla bilgi.', 'images/user.png')">
+                    <img src="images/user.png" alt="Persoon 7" class="profile-pic">
+                    <h3>Isim 7</h3>
+                    <p>Meslek: Meslek 7</p>
+                </div>
+                <div class="person"
+                    onclick="openModal('Isim 8', 'Meslek: Meslek 8', 'Bu kişi hakkında daha fazla bilgi.', 'images/user.png')">
+                    <img src="images/user.png" alt="Persoon 8" class="profile-pic">
+                    <h3>Isim 8</h3>
+                    <p>Meslek 8</p>
+                </div>
+            </div>
+            <!-- Modal Penceresi -->
+            <div id="personModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="images/user.png" alt="Person Image" class="modal-image">
+        <div id="modalContent">
+            <div class="modal-info">
+                <p id="modalNameLabel">İsim:</p>
+                <h2 id="modalName"></h2>
+            </div>
+            <div class="modal-info">
+                <p id="modalJobLabel">Meslek:</p>
+                <p id="modalJob"></p>
+            </div>
+            <div class="modal-info">
+                <p id="modalInfoLabel"></p>
+                <p id="modalInfo"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        </div>
+    </main>
+
+    <hr class="divider">
+
+    <footer>
+        <div class="footer-social">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <div class="footer-logo">
+            <a href="https://tdv.org/tr-TR/">
+                <img src="/images/belcikadiyanetlogo.png" alt="diyanet-logo" id="diyanet-logo">
+            </a>
+            <a href="index2.html">
+                <img src="/images/AnderlechtMerkezCamiiFooter.png" alt="logo" id="footer-logo">
+            </a>
+        </div>
+        <div class="footer-help">
+            <a href="Membership.html">Üye formu</a>
+            <a href="Admins.html">Yönetim Kurulu</a>
+        </div>
+    </footer>
+
+
+    <script src="js/scripts.js"></script>
+    <script src="js/language.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ana Sayfa | Anderlecht Merkez Camii </title>
+  <!--Css-->
+  <link rel="stylesheet" href="css/index2.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="x-icon" href="images/logo.png">
+
+  <!--Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/9b93d29e26.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu">
+</head>
+
+<body>
+  <div class="header">
+    <a href="index2.html">
+      <img src="images/logo.png" alt="logo">
+    </a>
+
+    <!-- Menü İkonu -->
+    <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <span class="closebtn" onclick="closeMenu()">&times;</span>
+      <a href="index2.html">Ana sayfa</a>
+      <a href="Admins.html">Yönetim Kurulu</a>
+      <a href="AGK.html">A.G.K.</a>
+      <a href="contact.html">Iletisim</a>
+      <a href="Membership.html">Üye ol</a>
+    </div>
+  </div>
+
+
+
+
+  <div class="background-image">
+    <img src="images/istanbulcamii.jpg" alt="Achtergrond afbeelding" class="background-img">
+    <div class="slide-content">
+      <h1>Anderlecht Merkez Camii</h1>
+      <a href="Membership.html">
+        <button type="button" id="banner-button">Üye ol</button>
+      </a>
+    </div>
+  </div>
+
+
+
+  <main>
+    <div class="main-boxes">
+      <div class="main-box1">
+        <h2>Çocuklara özel Kur'an dersleri</h2>
+        <p>Çocuklara özel cüz ve Kur'an derslerimiz mevcuttur. Her <b>cumartesi ve pazar günleri</b> olan derslerimize
+          katılmak için, aşağıdaki linkten yazılabilirsiniz.</p>
+        <a href="index2.html">
+          <button type="button" id="yazilma-formu">Yazılma formu</button>
+        </a>
+      </div>
+      <div class="main-box2">
+        <h2>Erkek ve Kız Gençlik Kolları</h2>
+        <p>Her cuma günleri <b>saat 20'de</b>, erkek ve kız genclik kollarının düzenledigi derslere katılmak için
+          aşağıdaki
+          linkten daha fazla bilgi edinebilirsiniz.</p>
+        <a href="index2.html">
+          <button type="button" id="genclik-button">Daha fazla bilgi</button>
+        </a>
+      </div>
+      <div class="main-box3">
+        <h2>Camii'miz hakkında</h2>
+        <p>Anderlecht Merkez Camii hakkında daha fazla bilgi için, aşağıdaki linkten öğrenebilirsiniz.</p>
+        <a href="index2.html">
+          <button type="button" id="hakkinda-button">Daha fazla bilgi</button>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="camii-hakkinda">
+      <div class="hakkinda-content">
+        <div class="hakkinda-part1">
+
+        </div>
+        <div class="hakkinda-part2">
+          <h2>Hikayemiz</h2>
+          <p>Camii'miz Brükselin Anderlecht şehrinde bulunuyor. 1979'dan bu yana kadar tüm müslüman kardeslerimize
+            hizmet etmektedir... </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="camii-map">
+      <div class="camii-map1">
+        <h2>Adres</h2>
+        <p>Rue Auguste Gevaert, 39 1070 Bruxelles (Anderlecht)</p>
+        <a href="https://maps.app.goo.gl/2WA14Vte4PKgvFVbA">
+          <button type="button" id="map-button">Google Maps <i class="fa-solid fa-map-pin"></i></button>
+        </a>
+      </div>
+      <div class="camii-map2">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3139.7321444193376!2d4.326504176963369!3d50.83746645942217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c412897387cb%3A0xd1b01c8b793aeeb3!2sMosqu%C3%A9e%20Merkez!5e1!3m2!1sen!2sbe!4v1725305807154!5m2!1sen!2sbe"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+  </main>
+
+  <hr class="divider">
+
+  <footer>
+    <div class="footer-social">
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <div class="footer-logo">
+      <a href="https://tdv.org/tr-TR/">
+        <img src="/images/belcikadiyanetlogo.png" alt="diyanet-logo" id="diyanet-logo">
+      </a>
+      <a href="index2.html">
+        <img src="/images/AnderlechtMerkezCamiiFooter.png" alt="logo" id="footer-logo">
+      </a>
+    </div>
+    <div class="footer-help">
+      <a href="Membership.html">Üye formu</a>
+      <a href="Admins.html">Yönetim Kurulu</a>
+    </div>
+  </footer>
+
+
+  <script src="js/scripts.js"></script>
+  <script src="js/language.js"></script>
+
+</body>
+
+</html>
