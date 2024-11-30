@@ -126,6 +126,12 @@ body {
   z-index: -1;
   border-radius: 20px;
 }
+@media (max-width: 480px) {
+  .background-img {
+    height: 60vh; /* Yüksekliği küçült */
+    max-width: 480px;
+  }
+}
 
 .slide-content {
   color: white;
@@ -160,8 +166,13 @@ body {
 }
 /* 480px ekranlar için */
 @media (max-width: 480px) {
+  .slide-content {
+    padding-top: -100px; /* İçerik yukarı taşınır */
+  }
+
   .slide-content h1 {
     font-size: 2rem; /* Yazı boyutunu küçült */
+    margin-bottom: 10px; /* Başlık ile buton arasındaki boşluk azaltılır */
   }
 
   #banner-button {
@@ -169,8 +180,10 @@ body {
     font-size: 0.9rem; /* Yazı boyutunu küçült */
     margin: 0 auto; /* Ortalamak için */
     display: block; /* Ortalamak için */
+    margin-top: -10px; /* Buton yukarı taşınır */
   }
 }
+
 
 main {
   margin-top: 5em;
@@ -274,7 +287,7 @@ main {
   }
 
   .main-box1, .main-box2, .main-box3 {
-    width: 90%; /* Her kutu %90 genişlikte olacak */
+    width: 100%; /* Her kutu %90 genişlikte olacak */
     margin-top: 2em; /* Üst boşluk daha küçük olacak */
   }
 
