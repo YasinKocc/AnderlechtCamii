@@ -308,13 +308,20 @@ main {
   flex: 1;
   max-width: 30%;
   margin-right: 20px;
-  background-image: url('/images/hakkindaimage.jpg');
-  background-repeat: no-repeat;
-  background-size: cover; /* Görüntü kaplayacak şekilde ayarlanır */
-  background-position: center; /* Görüntü ortalanır */
   border-radius: 20px;
-  aspect-ratio: 4 / 3; /* Daha uyumlu bir yükseklik-genişlik oranı eklenebilir */
+  aspect-ratio: 4 / 3; /* Yükseklik ve genişlik oranı ayarı */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.hakkinda-part1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Resmi div içine sığdırarak, kaplayacak şekilde gösterir */
+  border-radius: 20px;
+}
+
 
 .hakkinda-part2 {
   flex: 2;
