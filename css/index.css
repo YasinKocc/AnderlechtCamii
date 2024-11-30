@@ -158,6 +158,19 @@ body {
   cursor: pointer;
 
 }
+/* 480px ekranlar için */
+@media (max-width: 480px) {
+  .slide-content h1 {
+    font-size: 2rem; /* Yazı boyutunu küçült */
+  }
+
+  #banner-button {
+    width: 80%; /* Genişliği küçült */
+    font-size: 0.9rem; /* Yazı boyutunu küçült */
+    margin: 0 auto; /* Ortalamak için */
+    display: block; /* Ortalamak için */
+  }
+}
 
 main {
   margin-top: 5em;
