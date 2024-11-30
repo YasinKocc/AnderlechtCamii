@@ -131,9 +131,14 @@ body {
   border-radius: 20px;
   width: 30%;
   height: 60vh;
-  background-image: url('/images/erkekgenclik.jpg');
-  background-size: cover;
   border: none;
+}
+
+.left-section-erkek img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .right-section-erkek {
@@ -164,9 +169,16 @@ body {
   width: 30%;
   border-radius: 20px;
   height: 60vh;
-  background-image: url('/images/akgk.jpg');
-  background-size: cover;
+  border: none;
 }
+
+.right-section-kiz img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
 
 .left-section-kiz h1 {
   padding-top: 200px;
