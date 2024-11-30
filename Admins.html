@@ -22,17 +22,38 @@
 
 <body>
     <div class="header">
-        <a href="index2.html">
-            <img src="images/logo.png" alt="logo">
+        <!-- Logo -->
+        <a href="index2.html" class="header-logo">
+          <img src="images/logo.png" alt="logo" />
         </a>
-        <div class="header-right">
+    
+        <!-- Navigation Menu (Desktop View) -->
+        <nav class="header-nav">
+          <a href="index2.html">Ana sayfa</a>
+          <a href="Admins.html">Yönetim Kurulu</a>
+          <a href="AGK.html">A.G.K.</a>
+          <a href="contact.html">İletisim</a>
+          <a href="Membership.html">Üye ol</a>
+        </nav>
+    
+        <!-- Hamburger Menu Icon (Mobile View) -->
+        <div class="hamburger-menu" onclick="toggleSidebar()">
+          ☰
+        </div>
+    
+        <!-- Sidebar (Hidden by Default) -->
+        <div id="sidebar" class="sidebar">
+          <div class="close-btn" onclick="toggleSidebar()">×</div>
+          <nav>
             <a href="index2.html">Ana sayfa</a>
             <a href="Admins.html">Yönetim Kurulu</a>
             <a href="AGK.html">A.G.K.</a>
             <a href="contact.html">Iletisim</a>
             <a href="Membership.html">Üye ol</a>
+          </nav>
         </div>
-    </div>
+      </div>
+    
     <main>
         <div class="admin-container">
             <h1>Yönetim Kurulu</h1>
@@ -120,23 +141,31 @@
 
     <footer>
         <div class="footer-social">
+          <a href="https://www.instagram.com/anderlecht.merkez.camii/" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/anderlechtmerkezcamii/" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://wa.me/32470010334" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-whatsapp"></i>
+          </a>
+    
         </div>
+    
         <div class="footer-logo">
-            <a href="https://tdv.org/tr-TR/">
-                <img src="/images/belcikadiyanetlogo.png" alt="diyanet-logo" id="diyanet-logo">
-            </a>
-            <a href="index2.html">
-                <img src="/images/AnderlechtMerkezCamiiFooter.png" alt="logo" id="footer-logo">
-            </a>
+          <a href="https://www.diyanet.be/">
+            <img src="/images/belcikadiyanetlogo.png" alt="diyanet-logo" id="diyanet-logo">
+          </a>
+          <a href="index2.html">
+            <img src="/images/AnderlechtMerkezCamiiFooter.png" alt="logo" id="footer-logo">
+          </a>
         </div>
         <div class="footer-help">
-            <a href="Membership.html">Üye formu</a>
-            <a href="Admins.html">Yönetim Kurulu</a>
+          <a href="Membership.html">Üye formu</a>
+          <a href="Admins.html">Yönetim Kurulu</a>
         </div>
-    </footer>
+      </footer>
 
 
     <script src="js/scripts.js"></script>

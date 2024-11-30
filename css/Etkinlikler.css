@@ -6,72 +6,101 @@
     margin: 0;
 }
 
-/*HEADER*/
-header {
+/* Genel Header Stil */
+.header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-}
-
-
-nav {
-    flex: 0.1;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 1em;
-    padding: 1em;
-    width: 100%;
-    white-space: nowrap;
-}
-
-nav ul li a {
-    text-decoration: none;
+    padding: 10px 20px;
+    background-color: white; /* Arka plan rengi beyaz */
+    color: black; /* Yazı rengi siyah */
     position: relative;
+  }
+  
+  .header-logo img {
+    max-height: 100px;
+  }
+  
+  /* Navigasyon Menüsü (Masaüstü) */
+  .header-nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .header-nav a {
+    color: black; /* Yazı rengi siyah */
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .header-nav a:hover {
+    color: #555; /* Hover efektiyle koyu gri */
+  }
+  
+  /* Hamburger Menü İkonu (Mobil) */
+  .hamburger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
     color: black;
-}
-
-nav ul li a::after {
-    content: '';
-    display: block;
-    margin: 5px auto 0;
-    /* Üstte 5px boşluk bırak */
-    width: 100%;
-    /* Alt çizginin genişliği */
-    height: 1px;
-    /* Alt çizginin kalınlığı */
-    background: black;
-    /* Alt çizginin rengi */
-    transition: width .3s;
-    /* Geçiş animasyonu */
-}
-
-
-
-nav ul li a:hover::after {
-    width: 0;
-    /* Hover durumunda alt çizgiyi gizle */
-}
-
-.logo {
-    margin: 0em;
-}
-
-.logo img {
-    width: 150px;
-    height: 150px;
-}
-
+  }
+  
+  /* Sidebar (Başlangıçta Gizli) */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: white; /* Arka plan rengi beyaz */
+    color: black; /* Yazı rengi siyah */
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar .close-btn {
+    align-self: flex-end;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .sidebar nav a {
+    color: black; /* Yazı rengi siyah */
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .sidebar nav a:hover {
+    color: #555; /* Hover efektiyle koyu gri */
+  }
+  
+  /* Responsive Tasarım */
+  @media screen and (max-width: 768px) {
+    .header-nav {
+      display: none; /* Masaüstü menüsü gizlenir */
+    }
+  
+    .hamburger-menu {
+      display: block; /* Hamburger menü görünür */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .sidebar {
+      width: 250px; /* Küçük cihazlar için dar sidebar */
+    }
+  }
 /*DIVIDER*/
 #divider1 {
     width: 40%;
@@ -89,76 +118,133 @@ nav ul li a:hover::after {
     margin-bottom: 30px;
 }
 
-/*FOOTER*/
-/*FOOTER*/
+/* Varsayılan Footer Stili (Bilgisayar için) */
 footer {
-    margin-top: 5em;
-    background-color: #ffffff;
-    padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff; /* Arka plan beyaz */
+  color: #000000; /* Yazı rengi siyah */
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* İki logo arasına boşluk */
+}
+
+.footer-logo img {
+  max-width: 200px; /* Logo genişliğini büyüt */
+  height: auto; /* Oranları koru */
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* İkonlar arasına boşluk */
+}
+.footer-social a {
+  margin: 0 10px; /* İkonlar arasına yatay boşluk */
+  text-decoration: none; /* Link alt çizgisi olmaması için */
+  color: inherit; /* İkon rengi mevcut metin rengiyle uyumlu olsun */
+}
+.footer-social a:hover {
+  color: #555; /* Üzerine gelindiğinde farklı bir renk */
+}
+
+.footer-social i {
+  font-size: 20px; /* İkon boyutu */
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-social span {
+  margin-left: 5px; /* Yazıyı ikonla ayır */
+  font-size: 16px;
+  color: #000000;
+}
+
+.footer-help {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.footer-help a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Responsive - Mobil Görünüm (480px ve 768px İçin) */
+@media screen and (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
+  .footer-logo {
+    gap: 10px;
+  }
+
+  .footer-social {
+    text-align: left; /* Düzgün hizalama için */
+    margin-bottom: 15px; /* Footer genel boşluğu */
+  }
+
+  .footer-social i {
+    font-size: 20px; /* İkon boyutu */
+    display: inline-flex;
     align-items: center;
-    max-width: 1800px;
-    margin: 0 auto;
-    position: relative;
-    padding: 0 20px;
+    margin-bottom: 5px; /* İkon ile yazı arasında boşluk */
+  }
+
+  .footer-social span {
+    margin-left: 5px; /* Yazıyı ikonla ayır */
+    font-size: 16px;
+    color: #000000;
+  }
+  .footer-logo img {
+    max-width: 200px; /* Mobil görünümde logoları daha da büyüt */
+    margin-bottom: 15px; /* Altına boşluk ekle */
+  }
+
+  .footer-help {
+    text-align: center; /* Yazıları ortalar */
+  }
+
+  .footer-help a {
+    display: block; /* Linkleri dikey sırala */
+    margin: 10px auto; /* Dikey linklerin arasına boşluk ekler */
+    font-size: 16px; /* Yazı boyutunu belirler */
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    color: #000; /* Yazı rengi siyah */
+  }
+  .footer-help a:hover {
+    color: #555; /* Hover sırasında yazı rengini değiştirir */
+  }
 }
 
-.social-icons {
-    display: flex;
-    gap: 15px;
-    flex: 1;
-}
+/* 480px ve Altı İçin */
+@media screen and (max-width: 480px) {
+  .footer-logo img {
+    width: 80px;
+  }
 
-.social-icon {
-    font-size: 25px;
-    color: transparent;
-    text-decoration: none;
-    transition: color 0.3s, background 0.3s;
-}
+  .footer-social i {
+    font-size: 16px; /* Daha küçük ikonlar */
+  }
 
-.social-icon:hover {
-    color: transparent;
-}
+  .footer-social span {
+    font-size: 12px; /* Daha küçük metin */
+  }
 
-.social-icon .fa-instagram {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.social-icon .fa-whatsapp {
-    background: linear-gradient(45deg, #25D366, #128C7E);
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.social-icon .fa-facebook {
-    color: #3b5998;
-}
-
-.camii-name {
-    font-size: 25px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.camii-address {
-    text-align: right;
-    flex: 1;
-}
-
-.camii-address a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.camii-address a:hover {
-    text-decoration: underline;
+  .footer-help a {
+    font-size: 12px;
+  }
+  
 }
 
 /* Dropdown button */

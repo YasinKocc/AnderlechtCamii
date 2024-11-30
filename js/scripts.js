@@ -36,17 +36,13 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Menü açma ve kapama işlevi
-// Menü açma fonksiyonu
-function toggleMenu() {
+function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
-    sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px'; // Sidebar'ı aç ve kapa
-  }
-  
-  // Menü kapama fonksiyonu
-  function closeMenu() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.style.width = '0'; // Sidebar'ı kapat
+    if (sidebar.style.right === '0px') {
+      sidebar.style.right = '-300px'; // Close sidebar
+    } else {
+      sidebar.style.right = '0px'; // Open sidebar
+    }
   }
   
   

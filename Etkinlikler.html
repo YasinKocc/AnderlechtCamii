@@ -11,52 +11,70 @@
 
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Ana sayfa</a></li>
-                <li><a href="Admins.html">Yönetim kurulu</a></li>
-                <li><a href="AGK.html">A.G.K.</a></li>
-            </ul>
-        </nav>
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.png" alt="logo" id="logo">
-            </a>
-        </div>
+  <div class="header">
+    <!-- Logo -->
+    <a href="index2.html" class="header-logo">
+      <img src="images/logo.png" alt="logo" />
+    </a>
 
+    <!-- Navigation Menu (Desktop View) -->
+    <nav class="header-nav">
+      <a href="index2.html">Ana sayfa</a>
+      <a href="Admins.html">Yönetim Kurulu</a>
+      <a href="AGK.html">A.G.K.</a>
+      <a href="contact.html">İletisim</a>
+      <a href="Membership.html">Üye ol</a>
+    </nav>
 
-        <nav>
-            <ul>
-                <li><a href="Etkinlikler.html">Etkinlikler</a></li>
-                <li><a href="#">Iletisim</a></li>
-                <li><a href="Membership.html">Üye ol</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Hamburger Menu Icon (Mobile View) -->
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+      ☰
+    </div>
+
+    <!-- Sidebar (Hidden by Default) -->
+    <div id="sidebar" class="sidebar">
+      <div class="close-btn" onclick="toggleSidebar()">×</div>
+      <nav>
+        <a href="index2.html">Ana sayfa</a>
+        <a href="Admins.html">Yönetim Kurulu</a>
+        <a href="AGK.html">A.G.K.</a>
+        <a href="contact.html">Iletisim</a>
+        <a href="Membership.html">Üye ol</a>
+      </nav>
+    </div>
+  </div>
+
     <div id="divider1"></div>
 
 
 
     <footer>
-        <div class="footer-social">
+      <div class="footer-social">
+        <a href="https://www.instagram.com/anderlecht.merkez.camii/" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/anderlechtmerkezcamii/" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://wa.me/32470010334" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-whatsapp"></i>
-        </div>
-        <div class="footer-logo">
-          <a href="https://tdv.org/tr-TR/">
-            <img src="/AnderlechtcamiiProject/images/belcikadiyanetlogo.png" alt="diyanet-logo" id="diyanet-logo">
-          </a>
-          <a href="index2.html">
-            <img src="/AnderlechtcamiiProject/images/AnderlechtMerkezCamiiFooter.png" alt="logo" id="footer-logo">
-          </a>
-        </div>
-        <div class="footer-help">
-          <a href="Membership.html">Üye formu</a>
-          <a href="Admins.html">Yönetim Kurulu</a>
-        </div>
-      </footer>
+        </a>
+  
+      </div>
+  
+      <div class="footer-logo">
+        <a href="https://www.diyanet.be/">
+          <img src="/images/belcikadiyanetlogo.png" alt="diyanet-logo" id="diyanet-logo">
+        </a>
+        <a href="index2.html">
+          <img src="/images/AnderlechtMerkezCamiiFooter.png" alt="logo" id="footer-logo">
+        </a>
+      </div>
+      <div class="footer-help">
+        <a href="Membership.html">Üye formu</a>
+        <a href="Admins.html">Yönetim Kurulu</a>
+      </div>
+    </footer>
 
       <script src="js/language.js"></script>
       <script src="js/scripts.js"></script>

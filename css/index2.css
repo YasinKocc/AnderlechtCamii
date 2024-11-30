@@ -1,5 +1,4 @@
 
-
 body {
   background-color: white;
   font-family: 'Montserrat', sans-serif;
@@ -11,89 +10,100 @@ body {
   overflow-x: hidden;
 }
 
-/* Header genel stil */
+/* Genel Header Stil */
 .header {
-  overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 20px;
+  background-color: white; /* Arka plan rengi beyaz */
+  color: black; /* Yazı rengi siyah */
+  position: relative;
 }
 
-.header img {
-  width: 150px;
-  height: 150px;
+.header-logo img {
+  max-height: 100px;
 }
 
-/* Menü ikonu */
-.menu-icon {
-  display: none; /* Bilgisayarda gizli */
-  color: black;
-  font-size: 40px; /* Iconun büyüklüğünü 40px olarak ayarlıyoruz */
-  cursor: pointer;
-  position: absolute;
-  right: 20px; /* Sağ tarafta biraz daha sola alıyoruz */
-}
-
-/* Sidebar (Telefonlar için) */
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: white;
-  color: black;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  z-index: 1000;
-  box-shadow: -2px 0px 5px rgba(0,0,0,0.5); /* Sidebar kenarına gölge ekleniyor */
-}
-
-.sidebar a {
-  padding: 12px;
-  text-decoration: none;
-  font-size: 15px;
-  color: black;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidebar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.sidebar .closebtn {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  font-size: 36px;
-  color: black;
-  cursor: pointer;
-}
-
-/* Menü Linkleri (Bilgisayar için) */
-.header-right {
+/* Navigasyon Menüsü (Masaüstü) */
+.header-nav {
   display: flex;
-  gap: 15px;
-  margin-top: 3em;
+  gap: 20px;
 }
 
-.header-right a {
-  color: black;
-  text-align: center;
-  padding: 12px;
+.header-nav a {
+  color: black; /* Yazı rengi siyah */
   text-decoration: none;
   font-size: 14px;
-  line-height: 25px;
-  border-radius: 4px;
 }
 
-.header-right a:hover {
-  background-color: #ddd;
+.header-nav a:hover {
+  color: #555; /* Hover efektiyle koyu gri */
+}
+
+/* Hamburger Menü İkonu (Mobil) */
+.hamburger-menu {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
   color: black;
+}
+
+/* Sidebar (Başlangıçta Gizli) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: white; /* Arka plan rengi beyaz */
+  color: black; /* Yazı rengi siyah */
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .close-btn {
+  align-self: flex-end;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.sidebar nav a {
+  color: black; /* Yazı rengi siyah */
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar nav a:hover {
+  color: #555; /* Hover efektiyle koyu gri */
+}
+
+/* Responsive Tasarım */
+@media screen and (max-width: 768px) {
+  .header-nav {
+    display: none; /* Masaüstü menüsü gizlenir */
+  }
+
+  .hamburger-menu {
+    display: block; /* Hamburger menü görünür */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar {
+    width: 250px; /* Küçük cihazlar için dar sidebar */
+  }
 }
 
 
@@ -114,6 +124,7 @@ body {
   height: 90vh;
   object-fit: cover;
   z-index: -1;
+  border-radius: 20px;
 }
 
 .slide-content {
@@ -156,30 +167,28 @@ main {
 }
 
 .main-boxes {
-  width: 80%;
-  height: auto;
-  margin: 10%;
   display: flex;
-  justify-content: space-between; /* Kutuların yan yana olmasını sağla */
-  flex-wrap: wrap; /* Ekran küçüldüğünde kutuların alt alta geçmesini sağlar */
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  margin: 2em auto;
+  width: 90%; /* Genel genişlik */
 }
 
+/* Box'lar için ayarlar */
 .main-box1,
 .main-box2,
 .main-box3 {
-  border-radius: 30px;
-  background-color: #ddd;
-  width: 30%; /* Desktop için kutuların genişliği %30 */
-  height: auto; /* Yükseklik otomatik olacak */
-  margin-top: 2em; /* Kutular arasında boşluk */
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  width: 30%; /* Her box aynı genişlikte */
+  height: 300px; /* Sabit yükseklik */
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* Button alta yaslanır */
   align-items: center;
-  justify-content: flex-start;
-  padding-top: 1em;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 2s ease, transform 3s ease;
+  padding: 1em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .main-box1.visible,
@@ -192,19 +201,20 @@ main {
 .main-box1 h2,
 .main-box2 h2,
 .main-box3 h2 {
+  font-size: 1.5em; /* Aynı boyut */
   text-align: center;
-  color: #282828;
-  width: 70%;
-  margin-top: 1em;
+  color: #333;
+  margin-bottom: 1em;
 }
 
 .main-box1 p,
 .main-box2 p,
 .main-box3 p {
-  color: #282828;
+  font-size: 1em; /* Aynı boyut */
   text-align: center;
-  width: 70%;
-  word-wrap: break-word;
+  color: #555;
+  margin: 0 1em;
+  flex-grow: 1; /* Yazıları eşit alana yay */
 }
 
 .main-box1 p {
@@ -216,33 +226,35 @@ main {
 }
 
 .main-box3 p {
-  margin-top: 4.8em;
+  margin-top: 1em;
 }
 
+/* Butonlar için ayarlar */
 #yazilma-formu,
 #genclik-button,
 #hakkinda-button {
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   background-color: #282828;
   color: white;
-  border-radius: 20px;
   border: none;
-  font-size: 14px;
-  margin-top: 2em;
+  border-radius: 20px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-bottom: 1em;
   font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
 }
 
 #yazilma-formu:hover,
 #genclik-button:hover,
 #hakkinda-button:hover {
-  border: 1px solid #282828;
   background-color: #ddd;
   color: black;
-  cursor: pointer;
+  border: 1px solid #282828;
 }
 
 /* Responsive tasarım: ekran genişliği 800px ve daha küçük olduğunda */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .main-boxes {
     flex-direction: column; /* Kutuları dikey sıralar */
     align-items: center;
@@ -298,8 +310,10 @@ main {
   margin-right: 20px;
   background-image: url('/images/hakkindaimage.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; /* Görüntü kaplayacak şekilde ayarlanır */
+  background-position: center; /* Görüntü ortalanır */
   border-radius: 20px;
+  aspect-ratio: 4 / 3; /* Daha uyumlu bir yükseklik-genişlik oranı eklenebilir */
 }
 
 .hakkinda-part2 {
@@ -377,12 +391,14 @@ main {
   border: none;
   margin-top: 3em;
   font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+
 }
 
 #map-button:hover {
-  border: 1px solid #282828;
   background-color: #ddd;
   color: black;
+  border: 1px solid #282828;
   cursor: pointer;
 }
 
@@ -400,128 +416,190 @@ main {
   width: 50%;
 }
 
+/* Varsayılan Footer Stili (Bilgisayar için) */
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-}
-
-.footer-social i {
-  font-size: 24px;
-  margin: 0 10px;
-}
-
-.footer-social i.fa-instagram {
-  background: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  cursor: pointer;
-}
-
-.footer-social i.fa-facebook {
-  color: #3b5998;
-  cursor: pointer;
-}
-
-.footer-social i.fa-whatsapp {
-  color: #25D366;
-  cursor: pointer;
+  background-color: #ffffff; /* Arka plan beyaz */
+  color: #000000; /* Yazı rengi siyah */
 }
 
 .footer-logo {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  gap: 20px; /* İki logo arasına boşluk */
 }
 
 .footer-logo img {
-  width: 200px;
-  height: 60px;
-  margin-right: 15px;
+  max-width: 200px; /* Logo genişliğini büyüt */
+  height: auto; /* Oranları koru */
 }
 
-#diyanet-logo {
-  width: 200px;
-  height: 60px;
-  margin-top: 0px;
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* İkonlar arasına boşluk */
+}
+.footer-social a {
+  margin: 0 10px; /* İkonlar arasına yatay boşluk */
+  text-decoration: none; /* Link alt çizgisi olmaması için */
+  color: inherit; /* İkon rengi mevcut metin rengiyle uyumlu olsun */
+}
+.footer-social a:hover {
+  color: #555; /* Üzerine gelindiğinde farklı bir renk */
+}
+
+.footer-social i {
+  font-size: 20px; /* İkon boyutu */
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-social span {
+  margin-left: 5px; /* Yazıyı ikonla ayır */
+  font-size: 16px;
+  color: #000000;
 }
 
 .footer-help {
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
 }
 
 .footer-help a {
-  display: block;
   text-decoration: none;
-  color: black;
-  padding: 10px;
-  text-align: center;
+  color: #000000;
 }
 
-.footer-help a:hover {
-  text-decoration: underline;
-}
-
-/* Medya sorguları (Telefonlar için) */
+/* Responsive - Mobil Görünüm (480px ve 768px İçin) */
 @media screen and (max-width: 768px) {
-  /* Menü ikonu mobilde sağda görünür */
-  .menu-icon {
-    display: block;
-    font-size: 40px;
-    position: absolute;
-    right: 20px; /* Sağ tarafta hizalama */
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  /* Menü öğeleri mobilde gizli */
-  .header-right {
-    display: none;
+  .footer-logo {
+    gap: 10px;
   }
 
-  /* Sidebar açıldığında ekranı kaplasın (telefonlarda tam ekran) */
-  .sidebar {
-    width: 100%; /* Sidebar'ın genişliği tam ekran */
-    height: 100%; /* Tam yükseklik */
-    overflow-x: hidden; /* Yatay kaydırma engelleniyor */
-    overflow-y: auto; /* Dikey kaydırma sadece içeriği sığdırmak için */
+  .footer-social {
+    text-align: left; /* Düzgün hizalama için */
+    margin-bottom: 15px; /* Footer genel boşluğu */
   }
 
-  /* Sidebar içindeki menü öğeleri */
-  .sidebar a {
-    padding: 16px;
-    font-size: 18px; /* Daha büyük font boyutu */
+  .footer-social i {
+    font-size: 20px; /* İkon boyutu */
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 5px; /* İkon ile yazı arasında boşluk */
   }
 
-  /* Sidebar içerisindeki kapama butonu */
-  .sidebar .closebtn {
-    font-size: 36px;
-    color: black;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    left: 20px;
+  .footer-social span {
+    margin-left: 5px; /* Yazıyı ikonla ayır */
+    font-size: 16px;
+    color: #000000;
+  }
+  .footer-logo img {
+    max-width: 200px; /* Mobil görünümde logoları daha da büyüt */
+    margin-bottom: 15px; /* Altına boşluk ekle */
+  }
+
+  .footer-help {
+    text-align: center; /* Yazıları ortalar */
+  }
+
+  .footer-help a {
+    display: block; /* Linkleri dikey sırala */
+    margin: 10px auto; /* Dikey linklerin arasına boşluk ekler */
+    font-size: 16px; /* Yazı boyutunu belirler */
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    color: #000; /* Yazı rengi siyah */
+  }
+  .footer-help a:hover {
+    color: #555; /* Hover sırasında yazı rengini değiştirir */
   }
 }
 
-/* Tabletler ve Desktop için stil (değişiklik yok) */
-@media screen and (min-width: 769px) {
-  .menu-icon {
-    display: none; /* Menü ikonu masaüstü ve tabletlerde gizlenir */
+/* 480px ve Altı İçin */
+@media screen and (max-width: 480px) {
+  .footer-logo img {
+    width: 80px;
   }
 
-  .sidebar {
-    width: 0; /* Sidebar başlangıçta gizli */
+  .footer-social i {
+    font-size: 16px; /* Daha küçük ikonlar */
   }
 
-  .sidebar a {
-    padding: 12px;
-    font-size: 15px;
+  .footer-social span {
+    font-size: 12px; /* Daha küçük metin */
   }
 
-  .header-right {
+  .footer-help a {
+    font-size: 12px;
+  }
+  
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .main-box1,
+  .main-box2,
+  .main-box3 {
+    width: 90%; /* Telefon ekranında kutuların genişliği ekranı dolduracak şekilde */
+    margin-bottom: 1em; /* Kutular arasında boşluk */
+  }
+
+  .main-boxes {
+    flex-direction: column; /* Kutuları alt alta yerleştir */
+    gap: 1em; /* Kutular arası mesafe */
+  }
+
+  h2 {
+    font-size: 1.2em; /* Daha küçük başlıklar */
+  }
+
+  p {
+    font-size: 0.9em; /* Daha küçük metin */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-boxes {
     display: flex;
-    gap: 15px;
+    flex-direction: column; /* Kutuları alt alta yerleştir */
+    gap: 1em; /* Kutular arasında boşluk */
+    padding: 1em; /* Kenarlardan boşluk */
+  }
+
+  .main-box1,
+  .main-box2,
+  .main-box3 {
+    width: 100%; /* Ekranın tamamını kaplasın */
+    margin: 0 auto; /* Kutular merkezde olsun */
+    padding: 1em; /* İçerik için boşluk */
+  }
+
+  h2 {
+    font-size: 1em; /* Daha küçük başlık boyutu */
+    text-align: center; /* Başlıklar ortalanır */
+  }
+
+  p {
+    font-size: 0.85em; /* Daha küçük yazı */
+    text-align: center; /* Metin ortalanır */
+  }
+
+  button {
+    width: 100%; /* Düğme ekran genişliğine uygun */
+    font-size: 0.9em; /* Düğme yazı boyutu küçültülür */
+    padding: 10px; /* Düğme yüksekliği artırılır */
+    margin-top: 1em; /* Düğme ile üstteki içerik arasında boşluk */
   }
 }
 
