@@ -431,13 +431,16 @@ main {
 /* 768px Ekranlar İçin */
 @media (max-width: 768px) {
   .hakkinda-content {
+    display: flex;
     flex-direction: column-reverse; /* Yataydan dikeye geçiş ve yer değiştirme */
-    align-items: center; /* İçeriği ortalar */
+    align-items: center; /* İçeriği yatayda ortalar */
+    justify-content: center; /* İçeriği dikeyde ortalar */
+    text-align: center; /* İçeriği ortalar */
   }
 
   .hakkinda-part1 {
     max-width: 80%; /* Resmin genişliği artar */
-    margin-bottom: 10px; /* Resim ile yazı arasındaki boşluğu artır */
+    margin-bottom: 30px; /* Resim ile yazı arasındaki boşluğu artır */
   }
 
   .hakkinda-part1 img{
@@ -450,26 +453,29 @@ main {
   }
   .hakkinda-part2 p {
     font-size: 14px; /* Yazı boyutunu küçült */
-    width: 80%; /* Yazı genişliğini artır */
-    margin-bottom: 50px;
+    width: 90%; /* Yazı genişliğini artır */
+    margin-bottom: 80px;
   }
 }
 
 /* 480px Ekranlar İçin */
 @media (max-width: 480px) {
   .hakkinda-content {
+    display: flex;
     flex-direction: column-reverse; /* Yataydan dikeye geçiş ve yer değiştirme */
-    align-items: center; /* İçeriği ortalar */
+    align-items: center; /* İçeriği yatayda ortalar */
+    justify-content: center; /* İçeriği dikeyde ortalar */
+    text-align: center; /* Metinleri ortalar */ /* Yükseklik tüm ekranı kapsar */
   }
 
   .hakkinda-part1 {
-    max-width: 90%; /* Resmin genişliği daha da artar */
-    margin-bottom: 15px; /* Resim ile yazı arasındaki boşluğu azalt */
+    margin-bottom: 30px; /* Resim ile yazı arasındaki boşluğu azalt */
+    display: flex;
+    justify-content: center; /* Resmi ortalar */
   }
 
   .hakkinda-part2 {
     max-width: 90%; /* Metin genişliği artar */
-    text-align: center; /* Yazıyı ortalar */
   }
 
   .hakkinda-part2 h2 {
@@ -479,9 +485,11 @@ main {
   .hakkinda-part2 p {
     font-size: 14px; /* Yazı boyutunu küçült */
     width: 80%; /* Yazı genişliğini artır */
-    margin-bottom: 50px;
+    margin-bottom: 120px;
   }
 }
+
+
 
 .camii-map {
   margin-top: 10em;
