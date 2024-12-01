@@ -212,6 +212,97 @@ body {
 .kizgenclik {
   margin-bottom: 5em;
 }
+/* Mobil görünüm (480px ve altı) için */
+@media (max-width: 480px) {
+  main {
+    margin-bottom: 2em;
+  }
+
+  /* Erkek ve Kız Gençlik için ortak stil */
+  .erkekgenclik, .kizgenclik {
+    display: flex;
+    flex-direction: column-reverse; /* Resim alt, metin üst olacak şekilde */
+    width: 100%; /* HTML elemanının genişliği %100 olmalı */
+    margin: 0; /* Margin sıfırlandı */
+    padding: 0; /* Padding sıfırlandı */
+    box-sizing: border-box; /* İçerik ve padding'in genişliği hesaba katılsın */
+    max-width: 100%; /* İçerik ekran genişliğine sığacak şekilde */
+  }
+
+  /* Erkek Gençlik Kolları */
+  .left-section-erkek {
+    width: 100%; /* Resim %100 genişlikte */
+    height: 200px; /* Resim yüksekliği 200px */
+    order: 2; /* Resim en alta gelir */
+    margin: 0; /* Margin sıfırlandı */
+    padding: 0; /* Padding sıfırlandı */
+  }
+
+  .right-section-erkek {
+    width: 100%; /* Metin %100 genişlikte */
+    padding: 10px 0; /* İçerik etrafında boşluk */
+    text-align: center; /* Metin ortalanmış */
+    order: 1; /* Metin üstte gelir */
+    margin: 0; /* Margin sıfırlandı */
+  }
+
+  .right-section-erkek h1 {
+    padding-top: 20px;
+    font-size: 30px; /* Daha küçük yazı boyutu */
+  }
+
+  .right-section-erkek h2 {
+    font-size: 20px; /* Daha küçük yazı boyutu */
+  }
+
+  /* Kız Gençlik Kolları */
+  .left-section-kiz {
+    width: 100%; /* Resim %100 genişlikte */
+    height: 200px; /* Resim yüksekliği 200px */
+    order: 1; /* Resim üstte gelir */
+    margin: 0; /* Margin sıfırlandı */
+    padding: 0; /* Padding sıfırlandı */
+  }
+
+  .right-section-kiz {
+    width: 100%; /* Metin %100 genişlikte */
+    height: auto;
+    padding: 10px 0; /* İçerik etrafında boşluk */
+    text-align: center; /* Metin ortalanmış */
+    order: 2; /* Metin altta gelir */
+    margin: 0; /* Margin sıfırlandı */
+  }
+
+  .left-section-kiz h1 {
+    padding-top: 20px;
+    font-size: 30px; /* Daha küçük yazı boyutu */
+  }
+
+  .left-section-kiz h2 {
+    font-size: 20px; /* Daha küçük yazı boyutu */
+  }
+
+  /* Resimlerin boyutlandırılması */
+  .left-section-erkek img,
+  .right-section-kiz img {
+    width: 100%;
+    height: 200px; /* Yükseklik 200px olacak şekilde */
+    object-fit: cover;
+    max-width: 100%; /* Resmin ekran genişliğini geçmemesi için */
+  }
+
+  .right-section-erkek img,
+  .left-section-kiz img {
+    width: 100%;
+    height: 200px; /* Yükseklik 200px olacak şekilde */
+    object-fit: cover;
+    max-width: 100%; /* Resmin ekran genişliğini geçmemesi için */
+  }
+}
+
+
+
+
 
 
 .divider {
@@ -364,11 +455,11 @@ footer {
 /* 480px ve Altı İçin */
 @media screen and (max-width: 480px) {
   .footer-logo img {
-    width: 80px;
+    width: 180px;
   }
 
   .footer-social i {
-    font-size: 16px;
+    font-size: 20px;
     /* Daha küçük ikonlar */
   }
 
@@ -378,7 +469,7 @@ footer {
   }
 
   .footer-help a {
-    font-size: 12px;
+    font-size: 14px;
   }
 
 }
