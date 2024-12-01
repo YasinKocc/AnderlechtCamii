@@ -140,6 +140,9 @@ body {
 
 /* 480px ekranlar için */
 @media (max-width: 480px) {
+  .background{
+    height: 70vh;
+  }
   .background-img {
     max-width: 100%;
     height: 500px;
@@ -150,7 +153,7 @@ body {
     position: absolute;
     width: auto;
     height: 170px;
-    /* İçeriği yukarı taşır */
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -206,20 +209,29 @@ body {
 
 
 main {
-  margin-top: 5em;
+  margin-top: 10em;
   max-width: 100%;
   height: 80vh;
   flex: 1;
 }
 
 .main-boxes {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-  flex-wrap: wrap;
-  margin: 2em auto;
-  width: 90%;
-  /* Genel genişlik */
+  display: flex; /* Flexbox kullan */
+  justify-content: center; /* Kutuları yatayda ortala */
+  align-items: center; /* Dikey hizalama */
+  gap: 2em; /* Kutular arasında boşluk */
+  flex-wrap: wrap; /* Satır taşmalarını düzenle */
+  width: 90%; /* Genel genişlik */
+  margin: 0 auto; /* Kutuları sayfa ortasına hizala */
+  margin-bottom: 5em;
+}
+
+.main-boxes > div {
+  flex: 1 1 calc(33.33% - 2em); /* Her kutu genişliği %33, boşluklara uygun ayar */
+  padding: 20px; /* İç boşluk */
+  border-radius: 10px; /* Köşe yuvarlama */
+  box-sizing: border-box; /* Padding dahil genişlik hesaplama */
+  text-align: center; /* İçerik ortalama */
 }
 
 /* Box'lar için ayarlar */
@@ -330,6 +342,20 @@ main {
     /* Butonlar %100 genişlikte olacak */
     margin-top: 1em;
     /* Butonlar arasına daha küçük boşluk ekle */
+  }
+}
+/* Telefon Ekranları için */
+@media (max-width: 480px) {
+  .main-boxes {
+    flex-direction: column; /* Kutuları alt alta yerleştir */
+    max-width: 100%; /* Tam genişlik */
+    padding: 5px; /* Ana kapsayıcı için padding */
+  }
+
+  .main-boxes > div {
+    flex: none; /* Varsayılan genişliği kaldır */
+    padding: 10px; /* Kutuların içindeki boşlukları düzenle */
+    margin-bottom: 10px; /* Kutular arasında boşluk oluştur */
   }
 }
 
