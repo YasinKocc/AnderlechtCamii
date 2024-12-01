@@ -211,7 +211,7 @@ body {
 main {
   margin-top: 10em;
   max-width: 100%;
-  height: 80vh;
+  height: 10vh;
   flex: 1;
 }
 
@@ -359,13 +359,13 @@ main {
   }
 }
 
+/* Bilgisayar İçin */
 .camii-hakkinda {
   max-width: 100%;
   height: 80vh;
   opacity: 1;
   transform: translateY(-20px);
   transition: opacity 2s ease, transform 3s ease;
-
 }
 
 .camii-hakkinda.visible,
@@ -373,7 +373,7 @@ main {
 .hakkinda-part1.visible,
 .hakkinda-part2.visible {
   opacity: 0;
-  transform: translateY(20);
+  transform: translateY(20px);
 }
 
 .hakkinda-content {
@@ -397,7 +397,6 @@ main {
   margin-right: 20px;
   border-radius: 20px;
   aspect-ratio: 4 / 3;
-  /* Yükseklik ve genişlik oranı ayarı */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -407,10 +406,8 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Resmi div içine sığdırarak, kaplayacak şekilde gösterir */
   border-radius: 20px;
 }
-
 
 .hakkinda-part2 {
   flex: 2;
@@ -431,8 +428,54 @@ main {
   width: 60%;
 }
 
+/* 768px Ekranlar İçin */
+@media (max-width: 768px) {
+  .hakkinda-content {
+    flex-direction: column-reverse; /* Yataydan dikeye geçiş ve yer değiştirme */
+    align-items: center; /* İçeriği ortalar */
+  }
+
+  .hakkinda-part1 {
+    max-width: 80%; /* Resmin genişliği artar */
+    margin-bottom: 20px; /* Resim ile yazı arasındaki boşluğu artır */
+  }
+
+  .hakkinda-part2 {
+    max-width: 80%; /* Metin genişliği artar */
+    text-align: center; /* Yazıyı ortalar */
+  }
+}
+
+/* 480px Ekranlar İçin */
+@media (max-width: 480px) {
+  .hakkinda-content {
+    flex-direction: column-reverse; /* Yataydan dikeye geçiş ve yer değiştirme */
+    align-items: center; /* İçeriği ortalar */
+  }
+
+  .hakkinda-part1 {
+    max-width: 90%; /* Resmin genişliği daha da artar */
+    margin-bottom: 15px; /* Resim ile yazı arasındaki boşluğu azalt */
+  }
+
+  .hakkinda-part2 {
+    max-width: 90%; /* Metin genişliği artar */
+    text-align: center; /* Yazıyı ortalar */
+  }
+
+  .hakkinda-part2 h2 {
+    font-size: 30px; /* Başlık boyutunu küçült */
+  }
+
+  .hakkinda-part2 p {
+    font-size: 14px; /* Yazı boyutunu küçült */
+    width: 80%; /* Yazı genişliğini artır */
+    margin-bottom: 50px;
+  }
+}
+
 .camii-map {
-  margin-top: 20em;
+  margin-top: 10em;
   margin-bottom: 10em;
   display: flex;
   max-width: 100%;
@@ -503,6 +546,96 @@ main {
 .camii-map1 a {
   margin: 10px 0;
 }
+
+.camii-map {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.camii-map1, .camii-map2 {
+  width: 48%; /* Başlangıçta her bir kutu genişliği %48 */
+}
+
+.camii-map1 h2 {
+  font-size: 24px;
+}
+
+.camii-map1 p {
+  font-size: 16px;
+}
+
+#map-button {
+  background-color: #282828;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+#map-button i {
+  margin-left: 5px;
+}
+
+.camii-map2 iframe {
+  width: 100%; /* İframe genişliği %100 olacak şekilde ayarlandı */
+  height: 450px; /* Yükseklik belirli bir değere ayarlandı */
+  border-radius: 10px;
+  border: none;
+}
+
+/* 768px Ekranlar İçin */
+@media (max-width: 768px) {
+  .camii-map {
+    flex-direction: column; /* İçerikleri dikey olarak hizalar */
+    align-items: center; /* İçerikleri ortalar */
+  }
+
+  .camii-map1, .camii-map2 {
+    width: 90%; /* Genişlik daha da artar */
+    margin-bottom: 20px; /* Alt boşluk ekler */
+  }
+
+  .camii-map1 h2 {
+    font-size: 22px;
+  }
+
+  .camii-map1 p {
+    font-size: 14px;
+  }
+
+  #map-button {
+    width: 100%; /* Butonun genişliği %100 olur */
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .camii-map2 iframe {
+    height: 350px; /* iframe boyutunu küçültür */
+  }
+
+  /* Yazı üstte, harita altta olacak şekilde sıralama */
+  .camii-map1 {
+    order: 1; /* Yazılar üstte olacak */
+  }
+
+  .camii-map2 {
+    order: 2; /* Harita altta olacak */
+  }
+}
+
+/* 480px Ekranlar İçin */
+@media (max-width: 480px) {
+  .camii-map{
+    margin-top: 0em;
+  }
+  .camii-map2 iframe {
+    display: none; /* 480px altındaki ekranlarda iframe'i gizler */
+  }
+}
+
 
 .divider {
   border: none;
@@ -654,11 +787,11 @@ footer {
 /* 480px ve Altı İçin */
 @media screen and (max-width: 480px) {
   .footer-logo img {
-    width: 80px;
+    width: 180px;
   }
 
   .footer-social i {
-    font-size: 16px;
+    font-size: 20px;
     /* Daha küçük ikonlar */
   }
 
@@ -668,7 +801,7 @@ footer {
   }
 
   .footer-help a {
-    font-size: 12px;
+    font-size: 14px;
   }
 
 }
