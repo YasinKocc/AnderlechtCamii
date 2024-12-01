@@ -612,17 +612,8 @@ main {
     font-size: 14px;
   }
 
-  .camii-map2 iframe {
-    height: 350px; /* iframe boyutunu küçültür */
-  }
-
-  /* Yazı üstte, harita altta olacak şekilde sıralama */
-  .camii-map1 {
-    order: 1; /* Yazılar üstte olacak */
-  }
-
   .camii-map2 {
-    order: 2; /* Harita altta olacak */
+    display: none; /* iframe boyutunu küçültür */
   }
 }
 
