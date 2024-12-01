@@ -243,8 +243,9 @@ main {
 /* 768px için düzenleme */
 @media (max-width: 768px) {
   .harita-container iframe {
-    width: 750px;
-    height: 250px;
+    width: 100%;
+    height: 400px; /* Harita yüksekliği 200px'e düşürüldü */
+    border-radius: 20px;
   }
 }
 

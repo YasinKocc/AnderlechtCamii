@@ -437,12 +437,21 @@ main {
 
   .hakkinda-part1 {
     max-width: 80%; /* Resmin genişliği artar */
-    margin-bottom: 20px; /* Resim ile yazı arasındaki boşluğu artır */
+    margin-bottom: 10px; /* Resim ile yazı arasındaki boşluğu artır */
   }
+
+  .hakkinda-part1 img{
+    height: 400px
+  };
 
   .hakkinda-part2 {
     max-width: 80%; /* Metin genişliği artar */
     text-align: center; /* Yazıyı ortalar */
+  }
+  .hakkinda-part2 p {
+    font-size: 14px; /* Yazı boyutunu küçült */
+    width: 80%; /* Yazı genişliğini artır */
+    margin-bottom: 50px;
   }
 }
 
@@ -591,6 +600,7 @@ main {
   .camii-map {
     flex-direction: column; /* İçerikleri dikey olarak hizalar */
     align-items: center; /* İçerikleri ortalar */
+    margin-top: 0 ;
   }
 
   .camii-map1, .camii-map2 {
