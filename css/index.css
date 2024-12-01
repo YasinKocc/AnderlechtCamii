@@ -1,4 +1,3 @@
-
 body {
   background-color: white;
   font-family: 'Montserrat', sans-serif;
@@ -16,8 +15,10 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: white; /* Arka plan rengi beyaz */
-  color: black; /* Yazı rengi siyah */
+  background-color: white;
+  /* Arka plan rengi beyaz */
+  color: black;
+  /* Yazı rengi siyah */
   position: relative;
 }
 
@@ -32,13 +33,15 @@ body {
 }
 
 .header-nav a {
-  color: black; /* Yazı rengi siyah */
+  color: black;
+  /* Yazı rengi siyah */
   text-decoration: none;
   font-size: 14px;
 }
 
 .header-nav a:hover {
-  color: #555; /* Hover efektiyle koyu gri */
+  color: #555;
+  /* Hover efektiyle koyu gri */
 }
 
 /* Hamburger Menü İkonu (Mobil) */
@@ -56,9 +59,12 @@ body {
   right: -300px;
   width: 300px;
   height: 100%;
-  background-color: white; /* Arka plan rengi beyaz */
-  color: black; /* Yazı rengi siyah */
-  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  background-color: white;
+  /* Arka plan rengi beyaz */
+  color: black;
+  /* Yazı rengi siyah */
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+  /* Hafif gölge */
   transition: right 0.3s ease-in-out;
   z-index: 1000;
   display: flex;
@@ -80,36 +86,41 @@ body {
 }
 
 .sidebar nav a {
-  color: black; /* Yazı rengi siyah */
+  color: black;
+  /* Yazı rengi siyah */
   text-decoration: none;
   font-size: 18px;
 }
 
 .sidebar nav a:hover {
-  color: #555; /* Hover efektiyle koyu gri */
+  color: #555;
+  /* Hover efektiyle koyu gri */
 }
 
 /* Responsive Tasarım */
 @media screen and (max-width: 768px) {
   .header-nav {
-    display: none; /* Masaüstü menüsü gizlenir */
+    display: none;
+    /* Masaüstü menüsü gizlenir */
   }
 
   .hamburger-menu {
-    display: block; /* Hamburger menü görünür */
+    display: block;
+    /* Hamburger menü görünür */
   }
 }
 
 @media screen and (max-width: 480px) {
   .sidebar {
-    width: 250px; /* Küçük cihazlar için dar sidebar */
+    width: 250px;
+    /* Küçük cihazlar için dar sidebar */
   }
 }
 
-
-.background-image {
+/*banner*/
+.background {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,23 +137,51 @@ body {
   z-index: -1;
   border-radius: 20px;
 }
+
+/* 480px ekranlar için */
 @media (max-width: 480px) {
   .background-img {
-    height: 60vh; /* Yüksekliği küçült */
-    max-width: 480px;
+    max-width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .slide-content {
+    position: absolute;
+    width: auto;
+    height: 170px;
+    /* İçeriği yukarı taşır */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .slide-content h1 {
+    font-size: 50px;
+    color: black;
+    /* Telefon için */
+  }
+
+  #banner-button {
+    width: 60%;
+    /* Buton genişliği küçültüldü */
+    font-size: 0.9rem;
+    /* Buton yazı boyutu ayarlandı */
+    padding: 10px 20px;
+    /* Daha kompakt hale getirildi */
   }
 }
 
 .slide-content {
   color: white;
   text-align: center;
-  padding: 1em;
+  padding: 2em;
   border-radius: 5px;
+  font-size: 50px;
 }
 
-.slide-content h1 {
-  font-size: 80px;
-  color: #282828;
+.slide-content h1{
+  color: black;
 }
 
 #banner-button {
@@ -164,25 +203,6 @@ body {
   cursor: pointer;
 
 }
-/* 480px ekranlar için */
-@media (max-width: 480px) {
-  .slide-content {
-    padding-top: -100px; /* İçerik yukarı taşınır */
-  }
-
-  .slide-content h1 {
-    font-size: 2rem; /* Yazı boyutunu küçült */
-    margin-bottom: 10px; /* Başlık ile buton arasındaki boşluk azaltılır */
-  }
-
-  #banner-button {
-    width: 80%; /* Genişliği küçült */
-    font-size: 0.9rem; /* Yazı boyutunu küçült */
-    margin: 0 auto; /* Ortalamak için */
-    display: block; /* Ortalamak için */
-    margin-top: -10px; /* Buton yukarı taşınır */
-  }
-}
 
 
 main {
@@ -198,7 +218,8 @@ main {
   gap: 2em;
   flex-wrap: wrap;
   margin: 2em auto;
-  width: 90%; /* Genel genişlik */
+  width: 90%;
+  /* Genel genişlik */
 }
 
 /* Box'lar için ayarlar */
@@ -207,11 +228,14 @@ main {
 .main-box3 {
   background-color: #f0f0f0;
   border-radius: 15px;
-  width: 30%; /* Her box aynı genişlikte */
-  height: 300px; /* Sabit yükseklik */
+  width: 30%;
+  /* Her box aynı genişlikte */
+  height: 300px;
+  /* Sabit yükseklik */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Button alta yaslanır */
+  justify-content: space-between;
+  /* Button alta yaslanır */
   align-items: center;
   padding: 1em;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -227,7 +251,8 @@ main {
 .main-box1 h2,
 .main-box2 h2,
 .main-box3 h2 {
-  font-size: 1.5em; /* Aynı boyut */
+  font-size: 1.5em;
+  /* Aynı boyut */
   text-align: center;
   color: #333;
   margin-bottom: 1em;
@@ -236,11 +261,13 @@ main {
 .main-box1 p,
 .main-box2 p,
 .main-box3 p {
-  font-size: 1em; /* Aynı boyut */
+  font-size: 1em;
+  /* Aynı boyut */
   text-align: center;
   color: #555;
   margin: 0 1em;
-  flex-grow: 1; /* Yazıları eşit alana yay */
+  flex-grow: 1;
+  /* Yazıları eşit alana yay */
 }
 
 .main-box1 p {
@@ -282,22 +309,30 @@ main {
 /* Responsive tasarım: ekran genişliği 800px ve daha küçük olduğunda */
 @media screen and (max-width: 768px) {
   .main-boxes {
-    flex-direction: column; /* Kutuları dikey sıralar */
+    flex-direction: column;
+    /* Kutuları dikey sıralar */
     align-items: center;
   }
 
-  .main-box1, .main-box2, .main-box3 {
-    width: 100%; /* Her kutu %90 genişlikte olacak */
-    margin-top: 2em; /* Üst boşluk daha küçük olacak */
+  .main-box1,
+  .main-box2,
+  .main-box3 {
+    width: 100%;
+    /* Her kutu %90 genişlikte olacak */
+    margin-top: 2em;
+    /* Üst boşluk daha küçük olacak */
   }
 
   #yazilma-formu,
   #genclik-button,
   #hakkinda-button {
-    width: 100%; /* Butonlar %100 genişlikte olacak */
-    margin-top: 1em; /* Butonlar arasına daha küçük boşluk ekle */
+    width: 100%;
+    /* Butonlar %100 genişlikte olacak */
+    margin-top: 1em;
+    /* Butonlar arasına daha küçük boşluk ekle */
   }
 }
+
 .camii-hakkinda {
   max-width: 100%;
   height: 80vh;
@@ -310,7 +345,7 @@ main {
 .camii-hakkinda.visible,
 .hakkinda-content.main-box1.visible,
 .hakkinda-part1.visible,
-.hakkinda-part2.visible{
+.hakkinda-part2.visible {
   opacity: 0;
   transform: translateY(20);
 }
@@ -335,7 +370,8 @@ main {
   max-width: 30%;
   margin-right: 20px;
   border-radius: 20px;
-  aspect-ratio: 4 / 3; /* Yükseklik ve genişlik oranı ayarı */
+  aspect-ratio: 4 / 3;
+  /* Yükseklik ve genişlik oranı ayarı */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -344,7 +380,8 @@ main {
 .hakkinda-part1 img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Resmi div içine sığdırarak, kaplayacak şekilde gösterir */
+  object-fit: cover;
+  /* Resmi div içine sığdırarak, kaplayacak şekilde gösterir */
   border-radius: 20px;
 }
 
@@ -380,7 +417,7 @@ main {
 
 }
 
-.camii-map.visible{
+.camii-map.visible {
   opacity: 0;
   transform: translateY(20);
 }
@@ -455,43 +492,57 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #ffffff; /* Arka plan beyaz */
-  color: #000000; /* Yazı rengi siyah */
+  background-color: #ffffff;
+  /* Arka plan beyaz */
+  color: #000000;
+  /* Yazı rengi siyah */
 }
 
 .footer-logo {
   display: flex;
   justify-content: center;
-  gap: 20px; /* İki logo arasına boşluk */
+  gap: 20px;
+  /* İki logo arasına boşluk */
 }
 
 .footer-logo img {
-  max-width: 200px; /* Logo genişliğini büyüt */
-  height: auto; /* Oranları koru */
+  max-width: 200px;
+  /* Logo genişliğini büyüt */
+  height: auto;
+  /* Oranları koru */
 }
 
 .footer-social {
   display: flex;
   align-items: center;
-  gap: 15px; /* İkonlar arasına boşluk */
+  gap: 15px;
+  /* İkonlar arasına boşluk */
 }
+
 .footer-social a {
-  margin: 0 10px; /* İkonlar arasına yatay boşluk */
-  text-decoration: none; /* Link alt çizgisi olmaması için */
-  color: inherit; /* İkon rengi mevcut metin rengiyle uyumlu olsun */
+  margin: 0 10px;
+  /* İkonlar arasına yatay boşluk */
+  text-decoration: none;
+  /* Link alt çizgisi olmaması için */
+  color: inherit;
+  /* İkon rengi mevcut metin rengiyle uyumlu olsun */
 }
+
 .footer-social a:hover {
-  color: #555; /* Üzerine gelindiğinde farklı bir renk */
+  color: #555;
+  /* Üzerine gelindiğinde farklı bir renk */
 }
 
 .footer-social i {
-  font-size: 20px; /* İkon boyutu */
+  font-size: 20px;
+  /* İkon boyutu */
   display: inline-flex;
   align-items: center;
 }
 
 .footer-social span {
-  margin-left: 5px; /* Yazıyı ikonla ayır */
+  margin-left: 5px;
+  /* Yazıyı ikonla ayır */
   font-size: 16px;
   color: #000000;
 }
@@ -521,40 +572,56 @@ footer {
   }
 
   .footer-social {
-    text-align: left; /* Düzgün hizalama için */
-    margin-bottom: 15px; /* Footer genel boşluğu */
+    text-align: left;
+    /* Düzgün hizalama için */
+    margin-bottom: 15px;
+    /* Footer genel boşluğu */
   }
 
   .footer-social i {
-    font-size: 20px; /* İkon boyutu */
+    font-size: 20px;
+    /* İkon boyutu */
     display: inline-flex;
     align-items: center;
-    margin-bottom: 5px; /* İkon ile yazı arasında boşluk */
+    margin-bottom: 5px;
+    /* İkon ile yazı arasında boşluk */
   }
 
   .footer-social span {
-    margin-left: 5px; /* Yazıyı ikonla ayır */
+    margin-left: 5px;
+    /* Yazıyı ikonla ayır */
     font-size: 16px;
     color: #000000;
   }
+
   .footer-logo img {
-    max-width: 200px; /* Mobil görünümde logoları daha da büyüt */
-    margin-bottom: 15px; /* Altına boşluk ekle */
+    max-width: 200px;
+    /* Mobil görünümde logoları daha da büyüt */
+    margin-bottom: 15px;
+    /* Altına boşluk ekle */
   }
 
   .footer-help {
-    text-align: center; /* Yazıları ortalar */
+    text-align: center;
+    /* Yazıları ortalar */
   }
 
   .footer-help a {
-    display: block; /* Linkleri dikey sırala */
-    margin: 10px auto; /* Dikey linklerin arasına boşluk ekler */
-    font-size: 16px; /* Yazı boyutunu belirler */
-    text-decoration: none; /* Alt çizgiyi kaldırır */
-    color: #000; /* Yazı rengi siyah */
+    display: block;
+    /* Linkleri dikey sırala */
+    margin: 10px auto;
+    /* Dikey linklerin arasına boşluk ekler */
+    font-size: 16px;
+    /* Yazı boyutunu belirler */
+    text-decoration: none;
+    /* Alt çizgiyi kaldırır */
+    color: #000;
+    /* Yazı rengi siyah */
   }
+
   .footer-help a:hover {
-    color: #555; /* Hover sırasında yazı rengini değiştirir */
+    color: #555;
+    /* Hover sırasında yazı rengini değiştirir */
   }
 }
 
@@ -565,74 +632,96 @@ footer {
   }
 
   .footer-social i {
-    font-size: 16px; /* Daha küçük ikonlar */
+    font-size: 16px;
+    /* Daha küçük ikonlar */
   }
 
   .footer-social span {
-    font-size: 12px; /* Daha küçük metin */
+    font-size: 12px;
+    /* Daha küçük metin */
   }
 
   .footer-help a {
     font-size: 12px;
   }
-  
+
 }
 
 
 
 @media screen and (max-width: 768px) {
+
   .main-box1,
   .main-box2,
   .main-box3 {
-    width: 90%; /* Telefon ekranında kutuların genişliği ekranı dolduracak şekilde */
-    margin-bottom: 1em; /* Kutular arasında boşluk */
+    width: 90%;
+    /* Telefon ekranında kutuların genişliği ekranı dolduracak şekilde */
+    margin-bottom: 1em;
+    /* Kutular arasında boşluk */
   }
 
   .main-boxes {
-    flex-direction: column; /* Kutuları alt alta yerleştir */
-    gap: 1em; /* Kutular arası mesafe */
+    flex-direction: column;
+    /* Kutuları alt alta yerleştir */
+    gap: 1em;
+    /* Kutular arası mesafe */
   }
 
   h2 {
-    font-size: 1.2em; /* Daha küçük başlıklar */
+    font-size: 1.2em;
+    /* Daha küçük başlıklar */
   }
 
   p {
-    font-size: 0.9em; /* Daha küçük metin */
+    font-size: 0.9em;
+    /* Daha küçük metin */
   }
 }
 
 @media screen and (max-width: 480px) {
   .main-boxes {
     display: flex;
-    flex-direction: column; /* Kutuları alt alta yerleştir */
-    gap: 1em; /* Kutular arasında boşluk */
-    padding: 1em; /* Kenarlardan boşluk */
+    flex-direction: column;
+    /* Kutuları alt alta yerleştir */
+    gap: 1em;
+    /* Kutular arasında boşluk */
+    padding: 1em;
+    /* Kenarlardan boşluk */
   }
 
   .main-box1,
   .main-box2,
   .main-box3 {
-    width: 100%; /* Ekranın tamamını kaplasın */
-    margin: 0 auto; /* Kutular merkezde olsun */
-    padding: 1em; /* İçerik için boşluk */
+    width: 100%;
+    /* Ekranın tamamını kaplasın */
+    margin: 0 auto;
+    /* Kutular merkezde olsun */
+    padding: 1em;
+    /* İçerik için boşluk */
   }
 
   h2 {
-    font-size: 1em; /* Daha küçük başlık boyutu */
-    text-align: center; /* Başlıklar ortalanır */
+    font-size: 1em;
+    /* Daha küçük başlık boyutu */
+    text-align: center;
+    /* Başlıklar ortalanır */
   }
 
   p {
-    font-size: 0.85em; /* Daha küçük yazı */
-    text-align: center; /* Metin ortalanır */
+    font-size: 0.85em;
+    /* Daha küçük yazı */
+    text-align: center;
+    /* Metin ortalanır */
   }
 
   button {
-    width: 100%; /* Düğme ekran genişliğine uygun */
-    font-size: 0.9em; /* Düğme yazı boyutu küçültülür */
-    padding: 10px; /* Düğme yüksekliği artırılır */
-    margin-top: 1em; /* Düğme ile üstteki içerik arasında boşluk */
+    width: 100%;
+    /* Düğme ekran genişliğine uygun */
+    font-size: 0.9em;
+    /* Düğme yazı boyutu küçültülür */
+    padding: 10px;
+    /* Düğme yüksekliği artırılır */
+    margin-top: 1em;
+    /* Düğme ile üstteki içerik arasında boşluk */
   }
 }
-
