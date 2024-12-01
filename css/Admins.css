@@ -226,6 +226,12 @@ body {
 .modal-info p:last-child {
   margin-right: 0; /* Son p için margin-right'ı sıfırla */
 }
+@media (max-width: 768px) {
+  .modal-content {
+    margin-top: 30%; /* İçeriği daha aşağıya kaydır */
+  }
+}
+
 
 /* Mobil görünüm (480px ve altı) için */
 @media (max-width: 480px) {
@@ -271,6 +277,9 @@ body {
   .person p {
     font-size: 12px; /* Meslek fontunu büyüt */
   }
+  .modal-content {
+    margin-top: 50%; /* İçeriği daha aşağıya kaydır */
+  }
 }
 
 /* Masaüstü görünümü için */
@@ -287,6 +296,7 @@ body {
   .person {
     width: calc(25% - 20px); /* 4 kişiyi satıra yerleştirirken boşluk bırakır */
   }
+  
 }
 
 /*DIVIDER + FOOTER*/
