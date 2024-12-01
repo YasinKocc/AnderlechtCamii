@@ -439,6 +439,7 @@ main {
   }
 
   .hakkinda-part1 {
+    margin: 0 auto;
     max-width: 80%; /* Resmin genişliği artar */
     margin-bottom: 30px; /* Resim ile yazı arasındaki boşluğu artır */
   }
@@ -469,7 +470,7 @@ main {
   }
 
   .hakkinda-part1 {
-    margin-bottom: 30px; /* Resim ile yazı arasındaki boşluğu azalt */
+    margin: 0 auto;
     display: flex;
     justify-content: center; /* Resmi ortalar */
   }
