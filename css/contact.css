@@ -20,6 +20,8 @@ body {
   color: black;
   /* Yazı rengi siyah */
   position: relative;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 .header-logo img {
@@ -97,7 +99,6 @@ body {
   /* Hover efektiyle koyu gri */
 }
 
-/* Responsive Tasarım */
 @media screen and (max-width: 768px) {
   .header-nav {
     display: none;
@@ -116,40 +117,65 @@ body {
     /* Küçük cihazlar için dar sidebar */
   }
 }
-
 .banner h1 {
   text-align: center;
   font-size: 40px;
 }
 
-.social-boxes {
-  max-width: 90%;
-  height: 40vh;
+/* Genel stil */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Banner stil */
+.banner {
+  text-align: center;
+  color: black;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.banner h1 {
+  font-size: 40px;
+}
+
+/* Main içerik */
+main {
+  width: 100%;
   padding: 10px;
-  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Social Boxes */
+.social-boxes {
+  max-width: 480px; /* Max genişlik 480px */
+  margin: 0 auto; /* Ortaya hizalandı */
+  padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* İkonları yan yana yerleştirecek */
   align-items: center;
+
 }
 
 .social-link {
   text-decoration: none;
   color: inherit;
+  width: 32%; /* İkonlar %100 genişlikte değil, 3 kutu için toplamda %100 */
+  text-align: center;
 }
 
-.socialicon1 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.socialicon1,
-.socialicon2,
-.socialicon3 {
+.socialicon1, .socialicon2, .socialicon3 {
   border-radius: 20px;
-  width: 150px;
-  height: 150px;
-  margin: 0 50px;
+  width: 100%; /* Kutu genişliği %100 olacak */
+  height: 150px; /* Yükseklik küçültüldü */
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -157,20 +183,11 @@ body {
   transition: box-shadow 0.3s ease;
 }
 
-.socialicon1 p,
-.socialicon3 p {
+.socialicon1 p, .socialicon2 p, .socialicon3 p {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 14px; /* Font boyutu küçültüldü */
   font-weight: bold;
   text-align: center;
-}
-
-.socialicon2 p {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-
 }
 
 .socialicon1:hover {
@@ -191,24 +208,25 @@ body {
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  font-size: 60px;
+  font-size: 60px; /* İkon boyutu küçültüldü */
   cursor: pointer;
 }
 
 .socialicon2 i {
   color: #3b5998;
-  font-size: 60px;
+  font-size: 60px; /* İkon boyutu küçültüldü */
   cursor: pointer;
 }
 
 .socialicon3 i {
   color: #25D366;
-  font-size: 60px;
+  font-size: 60px; /* İkon boyutu küçültüldü */
   cursor: pointer;
 }
 
-
+/* Harita container */
 .harita-container {
+  margin-top: 2em;
   max-width: 100%;
   height: auto;
   overflow: hidden;
@@ -217,9 +235,8 @@ body {
 
 .harita-container iframe {
   width: 100%;
-  height: 500px;
-  /* Varsayılan yükseklik */
-  border: 0;
+  height: 400px; /* Harita yüksekliği 250px olarak ayarlandı */
+  border: none;
   border-radius: 8px;
 }
 
@@ -228,17 +245,43 @@ body {
   .harita-container iframe {
     width: 750px;
     height: 250px;
-    /* Daha küçük cihazlar için yükseklik */
   }
 }
 
-/* 480px için düzenleme */
+/* Mobil görünüm (480px ve altı) için */
 @media (max-width: 480px) {
+  main {
+    margin-bottom: 2em;
+  }
+
+  /* Social Boxes */
+  .social-boxes {
+    flex-direction: column; /* 480px ve altı için dikey hizalama */
+    gap: 15px; /* Sosyal kutular arasında daha fazla boşluk */
+    justify-content: center;
+    width: 100%; /* Kutular %100 genişlikte olacak */
+  }
+
+  .social-link {
+    width: 100%; /* Her kutu %100 genişlikte */
+  }
+
+  .socialicon1 i, .socialicon2 i, .socialicon3 i {
+    font-size: 50px; /* İkon boyutları 40px */
+  }
+
+  .socialicon1 p, .socialicon2 p, .socialicon3 p {
+    font-size: 14px; /* Font boyutları küçültüldü */
+  }
+
+  /* Harita container */
   .harita-container iframe {
-    height: 200px;
-    /* Mobil cihazlar için yükseklik */
+    width: 100%;
+    height: 400px; /* Harita yüksekliği 200px'e düşürüldü */
+    border-radius: 20px;
   }
 }
+
 
 .divider {
   border: none;
@@ -390,11 +433,11 @@ footer {
 /* 480px ve Altı İçin */
 @media screen and (max-width: 480px) {
   .footer-logo img {
-    width: 80px;
+    width: 180px;
   }
 
   .footer-social i {
-    font-size: 16px;
+    font-size: 20px;
     /* Daha küçük ikonlar */
   }
 
@@ -404,7 +447,7 @@ footer {
   }
 
   .footer-help a {
-    font-size: 12px;
+    font-size: 14px;
   }
 
 }
