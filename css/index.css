@@ -471,7 +471,7 @@ main {
 
   .hakkinda-part1 {
     margin: 0 auto;
-    display: flex;
+    max-width: 80%; /* Resmin genişliği artar */
     justify-content: center; /* Resmi ortalar */
   }
 
