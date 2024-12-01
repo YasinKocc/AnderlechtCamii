@@ -103,35 +103,41 @@ body {
     width: 250px; /* Küçük cihazlar için dar sidebar */
   }
 }
-/*ADMIN CONTAINER*/
+/* ADMIN CONTAINER */
 .admin-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.row {
+/* Row-1 ve Row-2 için düzenleme */
+.row-1, .row-2 {
   display: flex;
   justify-content: center;
   margin: 20px 0;
+  flex-wrap: wrap; /* Flex öğelerinin sarmasına izin verir */
 }
 
+/* Kişi için stil */
 .person {
   text-align: center;
-  margin: 50px;
+  margin: 10px; /* Kişiler arasında boşluk bırakır */
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 20px;
+  width: calc(25% - 20px); /* 4 kişiyi satıra yerleştirirken boşluk bırakır */
 }
+
 .person:hover {
   transform: scale(1.05);
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
+/* Profil resmi stil */
 .profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(221, 221, 221, 0.5);
@@ -140,74 +146,6 @@ body {
 
 .profile-pic:hover {
   box-shadow: 0 8px 16px rgba(221, 221, 221, 0.7);
-}
-
-/*DROPDOWN*/
-
-.dropdown-header1 {
-  max-width: 80%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  cursor: pointer;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  margin: 0 auto;
-}
-
-.dropdown-content1 {
-  max-width: 80%;
-  margin: 0 auto;
-  display: none;
-  padding: 15px;
-}
-
-.header-text {
-  flex: 1;
-  font-size: 30px;
-}
-
-.arrow-icon {
-  margin-left: 10px;
-  color: black;
-  font-size: 20px;
-}
-
-.dropdown-container2 {
-  margin-top: 1em;
-}
-
-.dropdown-header2 {
-  max-width: 80%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  cursor: pointer;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  margin: 0 auto;
-}
-
-.dropdown-content2 {
-  max-width: 80%;
-  margin: 0 auto;
-  display: none;
-  padding: 15px;
-}
-
-.header-text {
-  flex: 1;
-  font-size: 30px;
-}
-
-.arrow-icon {
-  transition: transform 0.8s ease;
-}
-
-.arrow-icon.rotate {
-  transform: rotate(180deg);
 }
 
 /* Modal stilini gizlemek için */
@@ -268,19 +206,6 @@ body {
   border-radius: 50%;
 }
 
-.language-selector {
-  display: flex;
-  justify-content: left;
-  margin-bottom: 10px;
-}
-
-.language-selector img {
-  width: 20px; /* Bayrak simgeleri için genişlik ayarı */
-  height: auto;
-  margin: 0 10px;
-  cursor: pointer;
-}
-
 #modalContent {
   text-align: center; /* İçerikleri ortalar */
 }
@@ -302,6 +227,67 @@ body {
   margin-right: 0; /* Son p için margin-right'ı sıfırla */
 }
 
+/* Mobil görünüm (480px ve altı) için */
+@media (max-width: 480px) {
+  .admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Row'lar ortalanacak ve sarmalı olacak şekilde */
+  .row-1, .row-2 {
+    display: flex;
+    justify-content: center; /* Kişileri ortalar */
+    gap: 10px; /* Kişiler arasındaki boşluk */
+    width: 100%; /* Satır genişliği tam ekran */
+    margin: 0; /* Dış boşlukları sıfırlar */
+    flex-wrap: wrap; /* İçerikler sarılabilir hale gelir */
+  }
+
+  /* Kişiler için stil */
+  .person {
+    width: calc(50% - 20px); /* 2 kişiyi yan yana yerleştirirken boşluk bırakır */
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Profil fotoğrafı boyutunu büyüt */
+  .profile-pic {
+    width: 120px; /* Görsel boyutunu büyüt */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .person h3 {
+    font-size: 14px; /* Başlık fontunu büyüt */
+  }
+
+  .person p {
+    font-size: 12px; /* Meslek fontunu büyüt */
+  }
+}
+
+/* Masaüstü görünümü için */
+@media (min-width: 481px) {
+  /* Row'lar 4 kişiyi yan yana yerleştirir */
+  .row-1, .row-2 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: nowrap; /* Sarmadan yan yana 4 kişi */
+    margin: 0;
+  }
+
+  .person {
+    width: calc(25% - 20px); /* 4 kişiyi satıra yerleştirirken boşluk bırakır */
+  }
+}
 
 /*DIVIDER + FOOTER*/
 
@@ -314,48 +300,63 @@ body {
 }
 
 /* Varsayılan Footer Stili (Bilgisayar için) */
+/* Varsayılan Footer Stili (Bilgisayar için) */
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #ffffff; /* Arka plan beyaz */
-  color: #000000; /* Yazı rengi siyah */
+  background-color: #ffffff;
+  /* Arka plan beyaz */
+  color: #000000;
+  /* Yazı rengi siyah */
 }
 
 .footer-logo {
   display: flex;
   justify-content: center;
-  gap: 20px; /* İki logo arasına boşluk */
+  gap: 20px;
+  /* İki logo arasına boşluk */
 }
 
 .footer-logo img {
-  max-width: 200px; /* Logo genişliğini büyüt */
-  height: auto; /* Oranları koru */
+  max-width: 200px;
+  /* Logo genişliğini büyüt */
+  height: auto;
+  /* Oranları koru */
 }
 
 .footer-social {
   display: flex;
   align-items: center;
-  gap: 15px; /* İkonlar arasına boşluk */
+  gap: 15px;
+  /* İkonlar arasına boşluk */
 }
+
 .footer-social a {
-  margin: 0 10px; /* İkonlar arasına yatay boşluk */
-  text-decoration: none; /* Link alt çizgisi olmaması için */
-  color: inherit; /* İkon rengi mevcut metin rengiyle uyumlu olsun */
+  margin: 0 10px;
+  /* İkonlar arasına yatay boşluk */
+  text-decoration: none;
+  /* Link alt çizgisi olmaması için */
+  color: inherit;
+  /* İkon rengi mevcut metin rengiyle uyumlu olsun */
 }
+
 .footer-social a:hover {
-  color: #555; /* Üzerine gelindiğinde farklı bir renk */
+  color: #555;
+  /* Üzerine gelindiğinde farklı bir renk */
 }
 
 .footer-social i {
-  font-size: 20px; /* İkon boyutu */
+  font-size: 20px;
+  /* İkon boyutu */
   display: inline-flex;
   align-items: center;
 }
 
 .footer-social span {
-  margin-left: 5px; /* Yazıyı ikonla ayır */
+  margin-left: 5px;
+  /* Yazıyı ikonla ayır */
   font-size: 16px;
   color: #000000;
 }
@@ -385,62 +386,80 @@ footer {
   }
 
   .footer-social {
-    text-align: left; /* Düzgün hizalama için */
-    margin-bottom: 15px; /* Footer genel boşluğu */
+    text-align: left;
+    /* Düzgün hizalama için */
+    margin-bottom: 15px;
+    /* Footer genel boşluğu */
   }
 
   .footer-social i {
-    font-size: 20px; /* İkon boyutu */
+    font-size: 20px;
+    /* İkon boyutu */
     display: inline-flex;
     align-items: center;
-    margin-bottom: 5px; /* İkon ile yazı arasında boşluk */
+    margin-bottom: 5px;
+    /* İkon ile yazı arasında boşluk */
   }
 
   .footer-social span {
-    margin-left: 5px; /* Yazıyı ikonla ayır */
+    margin-left: 5px;
+    /* Yazıyı ikonla ayır */
     font-size: 16px;
     color: #000000;
   }
+
   .footer-logo img {
-    max-width: 200px; /* Mobil görünümde logoları daha da büyüt */
-    margin-bottom: 15px; /* Altına boşluk ekle */
+    max-width: 200px;
+    /* Mobil görünümde logoları daha da büyüt */
+    margin-bottom: 15px;
+    /* Altına boşluk ekle */
   }
 
   .footer-help {
-    text-align: center; /* Yazıları ortalar */
+    text-align: center;
+    /* Yazıları ortalar */
   }
 
   .footer-help a {
-    display: block; /* Linkleri dikey sırala */
-    margin: 10px auto; /* Dikey linklerin arasına boşluk ekler */
-    font-size: 16px; /* Yazı boyutunu belirler */
-    text-decoration: none; /* Alt çizgiyi kaldırır */
-    color: #000; /* Yazı rengi siyah */
+    display: block;
+    /* Linkleri dikey sırala */
+    margin: 10px auto;
+    /* Dikey linklerin arasına boşluk ekler */
+    font-size: 16px;
+    /* Yazı boyutunu belirler */
+    text-decoration: none;
+    /* Alt çizgiyi kaldırır */
+    color: #000;
+    /* Yazı rengi siyah */
   }
+
   .footer-help a:hover {
-    color: #555; /* Hover sırasında yazı rengini değiştirir */
+    color: #555;
+    /* Hover sırasında yazı rengini değiştirir */
   }
 }
 
 /* 480px ve Altı İçin */
 @media screen and (max-width: 480px) {
   .footer-logo img {
-    width: 80px;
+    width: 180px;
   }
 
   .footer-social i {
-    font-size: 16px; /* Daha küçük ikonlar */
+    font-size: 20px;
+    /* Daha küçük ikonlar */
   }
 
   .footer-social span {
-    font-size: 12px; /* Daha küçük metin */
+    font-size: 12px;
+    /* Daha küçük metin */
   }
 
   .footer-help a {
-    font-size: 12px;
+    font-size: 14px;
   }
-  
-} 
+
+}
 
 /* Dropdown button */
 .dropdown-btn {
